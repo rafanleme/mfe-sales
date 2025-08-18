@@ -30,10 +30,10 @@ function Catalog() {
       <p className="muted">Catálogo vindo do microfrontend <code>sales</code>.</p>
       <div className="grid">
         {products.map((p) => (
-          <div key={p.id} className="card">
-            <strong>{p.name}</strong>
+          <div key={p.id} className="card" data-testid="product-card">
+            <strong data-testid="product-title">{p.name}</strong>
             <div className="muted">R$ {p.price.toFixed(2)}</div>
-            <button className="btn" style={{ marginTop:12 }} onClick={() => api?.addToCart(p)} disabled={!api}>
+            <button data-testid="add-to-cart" className="btn" style={{ marginTop:12 }} onClick={() => api?.addToCart(p)} disabled={!api}>
               {api ? 'Adicionar ao carrinho' : 'Carregando API...'}
             </button>
           </div>
